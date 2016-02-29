@@ -27,6 +27,10 @@ var StartLayer = cc.Layer.extend({
             res.Start_S_png,
             function(){
                 cc.log("Menu is clicked!");
+                //cc.director用来获取导演单例实体，cc.TransitionPageTurn创建了一个翻页效果的场景切换动画。
+                //转场动画需要小心浏览器的兼容性。比如翻页效果就在浏览器上不支持
+                //cc.director.pushScene(cc.TransitionPageTurn(1, new PlayScene(), false));
+                cc.director.pushScene(new PlayScene());
             }, this
         );
         startItem.attr({
